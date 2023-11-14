@@ -1,0 +1,99 @@
+c sharp homework
+Question 1:
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        double price1, price2, price3;
+
+        Console.Write("Enter the price of the first item: ");
+        price1 = Convert.ToDouble(Console.ReadLine());
+
+        Console.Write("Enter the price of the second item: ");
+        price2 = Convert.ToDouble(Console.ReadLine());
+
+        Console.Write("Enter the price of the third item: ");
+        price3 = Convert.ToDouble(Console.ReadLine());
+
+        double netAmount = price1 + price2 + price3;
+        double discount = netAmount * 0.10;
+        netAmount -= discount;
+
+        Console.WriteLine("The net amount payable is: {0}", netAmount);
+    }
+}
+
+Question 2:
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Enter a number: ");
+        int n = Convert.ToInt32(Console.ReadLine());
+
+        Console.WriteLine("Fibonacci sequence value at position " + n + " is " + Fibonacci(n));
+    }
+
+    static int Fibonacci(int n)
+    {
+        int a = 0, b = 1, c;
+
+        if (n == 0)
+            return a;
+
+        for (int i = 2; i <= n; i++)
+        {
+            c = a + b;
+            a = b;
+            b = c;
+        }
+
+        return b;
+    }
+}
+
+Question 3:
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Enter a number: ");
+        int number = Convert.ToInt32(Console.ReadLine());
+
+        if (IsPrime(number))
+        {
+            Console.WriteLine(number + " is a prime number.");
+        }
+        else
+        {
+            Console.WriteLine(number + " is not a prime number.");
+        }
+    }
+
+    static bool IsPrime(int number)
+    {
+        if (number <= 1)
+        {
+            return false;
+        }
+
+        int i = 2;
+        while (i * i <= number)
+        {
+            if (number % i == 0)
+            {
+                return false;
+            }
+
+            i++;
+        }
+
+        return true;
+    }
+}
